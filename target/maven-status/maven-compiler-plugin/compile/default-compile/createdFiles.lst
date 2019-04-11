@@ -1,0 +1,10 @@
+com\renan\ComercialApiApplication.class
+com\renan\model\Oportunidade.class
+com\renan\repository\RestaurantesRepository.class
+com\renan\model\Restaurants.class
+com\renan\controller\OportunidadesController.class
+com\renan\service\OportunidadeService.class
+com\renan\model\QRestaurants.class
+com\renan\repository\OportunidadeRepository.class
+com\renan\model\QOportunidade.class
+com\renan\controller\RestaurantesController.class
