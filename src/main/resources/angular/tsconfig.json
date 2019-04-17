@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "outDir": "javaScipt",
-    "noEmitOnError": false,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
-  }
-}
