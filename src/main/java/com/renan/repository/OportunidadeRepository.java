@@ -7,9 +7,11 @@ import java.util.Optional;
 
 public interface OportunidadeRepository extends JpaRepository<Oportunidade,Long> {
 
-    Optional<Oportunidade> findByDescricaoAndNomeProspecto(String descricao, String nomeProspecto);
+    Optional<Oportunidade> findByNomeAndSobrenomeAndTelefone(String nome, String sobrenome,String telefone);
 
-    Optional<Oportunidade> findByDescricao(String descricao);
+    Optional<Oportunidade> findByNome(String nome);
 
-    Optional<Oportunidade> findByNomeProspecto(String momeProspecto);
+    Optional<Oportunidade> findBySobrenome(String sobrenome);
+
+    Optional<Oportunidade> findByTelefone(String telefone);
 }

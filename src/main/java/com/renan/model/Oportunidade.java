@@ -1,10 +1,8 @@
 package com.renan.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-import java.math.BigDecimal;
 
 @Entity
 @Table
@@ -16,27 +14,30 @@ public class Oportunidade {
 
     @NotEmpty
     @Size(max = 80)
-    @Column(name = "nome_prospecto")
-    private String nomeProspecto;
+    @Column(name = "nome")
+    private String nome;
 
     @NotEmpty
     @Size(max = 200)
-    private String descricao;
+    @Column(name = "sobrenome")
+    private String sobrenome;
 
-    @Min(0)
-    private BigDecimal valor;
+    @Size(max = 200)
+    @Column(name = "email")
+    private String email;
 
-    @ManyToOne
-    @JoinColumn(name = "id_restaurant")
-    private Restaurants restaurants;
+    @NotEmpty
+    @Column(name = "telefone")
+    private String telefone;
 
-    public Restaurants getRestaurants() {
-        return restaurants;
-    }
+    @Column(name = "twitter")
+    private String twitter;
 
-    public void setRestaurants(Restaurants restaurants) {
-        this.restaurants = restaurants;
-    }
+    @Column(name = "skype")
+    private String skype;
+
+    @Column(name = "foto")
+    private Byte[] foto;
 
     public Long getId() {
         return id;
@@ -46,32 +47,64 @@ public class Oportunidade {
         this.id = id;
     }
 
-    public String getNomeProspecto() {
-        return nomeProspecto;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeProspecto(String nomeProspecto) {
-        this.nomeProspecto = nomeProspecto;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
-    public BigDecimal getValor() {
-        return valor;
+    public String getEmail() {
+        return email;
     }
 
-    public void setValor(BigDecimal valor) {
-        this.valor = valor;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+
+    public String getSkype() {
+        return skype;
+    }
+
+    public void setSkype(String skype) {
+        this.skype = skype;
+    }
+
+    public Byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Byte[] foto) {
+        this.foto = foto;
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         final int prime = 31;
         int result = 1;
 

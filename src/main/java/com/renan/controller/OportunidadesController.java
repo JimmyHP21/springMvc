@@ -44,10 +44,10 @@ public class OportunidadesController {
     public Oportunidade adicionar(@Valid @RequestBody Oportunidade oportunidade) {
 
         Optional<Oportunidade> oportunidadeExistente = oportunidaderepository
-            .findByDescricaoAndNomeProspecto(oportunidade.getDescricao(), oportunidade.getNomeProspecto());
+            .findByNomeAndSobrenomeAndTelefone(oportunidade.getNome(), oportunidade.getSobrenome(),oportunidade.getTelefone());
 
         if (oportunidadeExistente.isPresent()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ja existe uma oportunidade com a mesma descricao");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ja existe um usuario com os mesmos dados");
         }
 
         return oportunidaderepository.save(oportunidade);
@@ -58,16 +58,16 @@ public class OportunidadesController {
     public Oportunidade atualizar(@Valid @RequestBody Oportunidade oportunidade, @PathVariable Long id) {
 
         Optional<Oportunidade> opor = oportunidaderepository.findById(id);
-        Optional<Oportunidade> optExistente = oportunidaderepository.findByDescricaoAndNomeProspecto(oportunidade.getDescricao(), oportunidade.getNomeProspecto());
+        Optional<Oportunidade> optExistente = oportunidaderepository.findByNomeAndSobrenomeAndTelefone(oportunidade.getNome(), oportunidade.getSobrenome(),oportunidade.getTelefone());
 
         return oportunidaderepository.findById(id)
             .map(opt -> {
                 if (optExistente.isPresent())
-                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ja existe uma oportunidade com a mesma descricao");
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ja existe um usuario com os mesmos dados");
 
-                opt.setNomeProspecto(oportunidade.getNomeProspecto());
-                opt.setDescricao(oportunidade.getDescricao());
-                opt.setValor(Optional.ofNullable(oportunidade.getValor()).isEmpty() ? opor.get().getValor() : oportunidade.getValor());
+                opt.setNome(oportunidade.getNome());
+                opt.setSobrenome(oportunidade.getSobrenome());
+                opt.setTelefone(Optional.ofNullable(oportunidade.getTelefone()).isEmpty() ? opor.get().getTelefone() : oportunidade.getTelefone());
 
                 return oportunidaderepository.save(opt);
             })
