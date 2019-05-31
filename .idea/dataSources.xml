@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="comercial@127.0.0.1" uuid="be067be1-e6ec-493d-8a29-587344e304b8">
-      <driver-ref>mysql</driver-ref>
+    <data-source source="LOCAL" name="clientes" uuid="b3ed8f3e-05cb-4554-b082-1c2bed07bc90">
+      <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/comercial</jdbc-url>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:clientes</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Microsoft SQL Server - SAVE_048@192.168.25.202" uuid="db213808-31a3-4593-8a78-d0954db2c0fb">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://192.168.25.202;database=SAVE_048</jdbc-url>
       <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="zeroDateTimeBehavior" value="convertToNull" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="yearIsDateType" value="false" />
+        <property name="applicationName" value="DataGrip" />
       </driver-properties>
     </data-source>
   </component>

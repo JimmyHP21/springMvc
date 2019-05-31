@@ -1,5 +1,11 @@
-com\renan\model\QOportunidade.class
+com\renan\model\UsuarioModel.class
 com\renan\controller\OportunidadesController.class
-com\renan\model\Oportunidade.class
+com\renan\security\SegurancaConfig.class
+com\renan\model\Cliente.class
+com\renan\controller\ClienteController.class
 com\renan\repository\OportunidadeRepository.class
+com\renan\controller\UsuarioController.class
+com\renan\repository\UsuarioRepository.class
+com\renan\repository\ClientesRepository.class
+com\renan\model\Oportunidade.class
 com\renan\ComercialApiApplication.class
