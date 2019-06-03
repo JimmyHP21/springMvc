@@ -1,0 +1,6 @@
+-- insert into cliente (id, nome) values (1, 'Renan');
+-- insert into cliente (id, nome) values (2, 'Samuel');
+-- insert into cliente (id, nome) values (3, 'Eder');
+-- insert into cliente (id, nome) values (4, 'Mauro');
+-- insert into cliente (id, nome) values (5, 'Jao');
+-- insert into cliente (id, nome) values (6, 'Chefe');
